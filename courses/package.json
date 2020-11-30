@@ -1,5 +1,5 @@
 {
-  "name": "servo-courses",
+  "name": "api-courses",
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
@@ -10,5 +10,9 @@
   "license": "MIT",
   "devDependencies": {
     "serverless-google-cloudfunctions": "*"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.3",
+    "uuid": "^8.3.1"
   }
 }
