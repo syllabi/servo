@@ -12,6 +12,7 @@
     "serverless-google-cloudfunctions": "*"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "mongodb": "^3.6.3",
     "uuid": "^8.3.1"
   }

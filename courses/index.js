@@ -1,13 +1,18 @@
 "use strict";
 
+require("dotenv").config();
+
 const mongoClient = require("mongodb").MongoClient;
 const { v4 } = require("uuid");
 
 exports.create = async (request, response) => {
   try {
-    const client = await mongoClient.connect(process.env.CONNECTION_STRING, {
-      useUnifiedTopology: true,
-    });
+    const client = await mongoClient.connect(
+      encodeURI(process.env.CONNECTION_STRING),
+      {
+        useUnifiedTopology: true,
+      }
+    );
 
     if (!client) {
       return response
@@ -64,6 +69,7 @@ exports.create = async (request, response) => {
 
     response.status(200).json({ body: doc });
   } catch (err) {
+    console.log(err);
     response.status(500).json({ body: err.message });
   }
 };

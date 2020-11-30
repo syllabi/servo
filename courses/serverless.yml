@@ -1,5 +1,7 @@
 service: api-courses
 
+useDotenv: true
+
 provider:
   name: google
   labels:
@@ -10,7 +12,7 @@ provider:
   project: oxford-hackathon
   credentials: ~/.gcloud/keyfile.json
 
-frameworkVersion: '2'
+frameworkVersion: "2"
 
 plugins:
   - serverless-google-cloudfunctions
@@ -28,17 +30,17 @@ functions:
       - http: path
         path: courses
         method: post
-  
+
   all:
     handler: all
     events:
       - http: path
         path: courses
         method: get
-  
+
   single:
     handler: single
-      events:
-        - http: path
-          path: courses
-          method: get
+    events:
+      - http: path
+        path: courses
+        method: get
